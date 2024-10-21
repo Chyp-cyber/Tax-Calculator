@@ -1,0 +1,18 @@
+import ipywidgets as widgets
+from IPython.display import display
+
+def calculate(change):
+  num1 = int(num_1.value)
+  num2 = int(num_2.value)
+  total = num1 + num2
+  avg = total/2
+  with output:
+    print(f'The total is {total}')
+    print(f'The average is {avg}')
+
+num_1 = widgets.Text(description = "First Number")
+num_2 = widgets.Text(description = "Second Number")
+calculate_button = widgets.Button(description = "Calculate")
+calculate_button.on_click(calculate)
+output = widgets.Output()
+display(num_1, num_2, calculate_button, output)
